@@ -3,26 +3,20 @@ using CarsExample.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarsExample.ViewModels {
 
-    public class CarsViewModel : INotifyPropertyChanged {
+    public class CarsViewModel {
 
+        // We are using ObservableCollection because:
+        // When an object is added to or removed from an observable collection, the UI is automatically updated.
         private ObservableCollection<Car> items;
         public ObservableCollection<Car> Items {
             get { return items; }
             set {
-
                 items = value;
-                OnPropertyChanged("Items");
             }
         }
-
 
         public CarsViewModel() {
 
@@ -51,12 +45,5 @@ namespace CarsExample.ViewModels {
                     Items.Add(item);
             });
         }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName]string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-
     }
 }

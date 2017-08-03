@@ -95,7 +95,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Views\CarsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

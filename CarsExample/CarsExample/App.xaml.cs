@@ -12,7 +12,7 @@ namespace CarsExample {
         public App() {
 
             InitializeComponent();
-            MainPage = new CarsExample.Views.CarsPage();
+            MainPage = new NavigationPage(new CarsExample.Views.CarsPage());
         }
 
         protected override void OnStart() {
